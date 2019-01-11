@@ -1,0 +1,992 @@
+/* RESET POUR NIVELLER LES ATTRIBUTS SELON LES NAVIGATEURS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* POLICES UTILISEES POUR PAGE WEB */
+
+@font-face {
+    font-family: 'OpenSans';
+    	src:url('../fonts/opensans-regular-webfont.eot');
+    	src:url('../fonts/opensans-regular-webfont.eot') format('embedded-opentype'),
+         	url('../fonts/opensans-regular-webfont.woff') format('woff'),
+         	url('../fonts/opensans-regular-webfont.ttf') format('truetype'),
+         	url('../fonts/opensans-regular-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSansBold';
+    	src:url('../fonts/opensans-bold-webfont.eot');
+    	src:url('../fonts/opensans-bold-webfont.eot') format('embedded-opentype'),
+         	url('../fonts/opensans-bold-webfont.woff') format('woff'),
+         	url('../fonts/opensans-bold-webfont.ttf') format('truetype'),
+         	url('../fonts/opensans-bold-webfont.svg') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+	font-family: 'OpenSans', 'OpenSansBold', 'Arial';
+	background-color: #dfffee;
+	text-align: center;
+}
+
+
+.sections {
+	text-align: center;
+}
+
+/* TITRE ET LOGO */
+header {
+	text-align: center;
+}
+
+#logo_lyon {
+	text-align: center;
+	width: 10%;
+}
+
+#pagetitle {
+	text-align: center;
+	margin-bottom: 10px;
+	font-size: 50px;
+}
+
+
+
+/* SLIDER */
+
+#section1 {
+	display: flex;
+	margin-bottom: 100px;
+}
+
+.tutorial {
+	display: flex;
+	position: relative;
+}
+
+.capture {
+	width: 100%;
+}
+
+#capture1, #capture2, #capture3, #capture4, #capture5
+{
+	width: 100%;
+}
+
+.diaporama {
+	max-width: 100%;
+	position: relative;
+	margin: auto;
+}
+
+.slides {
+	display: none;
+}
+
+.btnSlider {
+	cursor: pointer;
+	position: absolute;
+	background-color: rgba(125,125,125,0.5);
+	top: 40%;
+	width: auto;
+	padding: 16px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	border: 1px solid white;
+	transform: translateY(-50%);	
+}
+
+#next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+#pause {
+	cursor: pointer;
+	position: absolute;
+	background-color: rgba(125,125,125,0.5);
+	width: 40px;
+	color: white;
+	padding: 10px;
+	border-radius: 3px 3px 3px 3px;
+	transition: 0.6s ease;
+	border: 1px solid white;
+	font-weight: normal;
+	left: 50%;
+	bottom: 50px;
+	transform: translateX(-50%);
+}
+
+#prev:hover, #suiv:hover, #pause:hover {
+	background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+	color: black;
+	margin-top: 15px;
+	font-size: 20px;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 15px;
+	
+}
+
+.dot {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+	background-color: #717171;
+}
+
+.fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+	from {opacity: 0.4}
+	to {opacity: 1}
+}
+
+@keyframes fade {
+	from {opacity: 0.4}
+	to {opacity: 1}
+}
+
+
+/* CARTE */
+
+#section2 {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.map {
+	position: relative;
+	height: 550px;
+	width: 80%;
+	margin-bottom: 50px;
+	z-index: 0;
+}
+
+.mapForm {
+	width: 65%;
+	margin-left: 0;
+	float: left;
+}
+
+
+/* FORMULAIRE ET ZONE DE RÉSA */
+
+.aside {
+	display: none;
+	position: relative;
+	height: 280px;
+	background-color: #fff7c0;
+	line-height: 1.4;
+	margin-left: 40px;
+	margin-bottom: 50px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 15px;
+	padding-bottom: 0;
+	width: 270px;
+	box-shadow: 5px 5px 5px 5px #666462;
+}
+
+.asideForm {
+	display: inline-block;
+}
+
+.asideReservation {
+	height: auto !important;
+    padding-bottom: 42px;
+}
+
+#infos {
+	line-height: 1.4;
+	background-color: #fff7c0;
+}
+
+.infosReservation {
+	height: 200px;
+}
+
+#stationElt {
+	font-size: 0.85em;
+}
+
+.statusEltGreen {
+	color: green;
+}
+
+.statusEltRed {
+	color: red;
+}
+
+#addressElt {
+	font-size: 0.8em;
+}
+
+.button:hover {
+	background-color: #dfffee;
+	cursor: pointer;
+}
+
+#buttonRes {
+	margin-top: 20%;
+    width: 80%;
+    height: 40px;
+    font-weight: bold;
+    border-color: black;
+}
+
+.buttonResForm {
+	display: inline-block;
+}
+
+.buttonResReservation {
+	display: none;
+}
+
+#buttonCancelAsideWhile {
+	display: none;
+    margin-top: 20%;
+    width: 190px;
+    height: 40px;
+	font-weight: bold;
+	font-size: 0.725em;
+    border-color: black;
+}
+
+.buttonCancelAsideWhileValidated {
+	display: inline-block !important;
+}
+
+#fields {
+	display: none;
+}
+
+.fieldsReservation {
+	display: inline-block !important;
+}
+
+#lastName {
+	margin-top: 4%;
+	display: inline-block;
+}
+
+#firstName {
+	margin-top: 1%;
+	display: inline-block;
+}
+
+#choice {
+	display: none;
+	font-size: 0.95em;
+	font-style: italic;
+	padding-top: 5px;
+	margin-top: 0;
+}
+
+#questionChoice {
+	margin-right: 9px;
+}
+
+.reservationChoice {
+	display: inline-block !important;
+}
+
+.optionImpossible {
+	display: none;
+}
+
+#reservation {
+	display: none;
+	margin-top: 5%;
+}
+
+.reservationReservation {
+	display: block !important;
+}
+
+#signature {
+	margin-top: 7%;
+}
+
+#canvas {
+	height: 150px;
+	width: 250px;
+	background-image: url("../img/fondCanvas.png");
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.button {
+	font-weight: bold;
+	height: 40px;
+	width: 100px;
+	margin-bottom: 15px;
+	border-color: black;
+}
+
+#btnValidation {
+	margin-right: 20px;
+}
+
+#btnValidation:hover {
+	color: green;
+}
+
+#btnCancellation:hover {
+	color: red;
+}
+
+/* FOOTER */
+
+footer {
+	box-shadow: 0px 0px 15px 1px;
+	width: 100%;
+	height: auto;
+	display: none;
+	bottom: 0;
+	background-color: white;
+	margin-top: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	position: sticky;
+}
+
+.footerValidated {
+	display: block;
+	height: auto;
+}
+
+.footerOpenOrder {
+	height: 20% !important;
+}
+
+.reservationStatus {
+	width: 60%;
+	height: auto;
+	display: inline-block;
+	font-size: 1.05em;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	padding: 2px 2px 2px 2px;
+	border: 1px solid black;
+}
+
+.reservationStatusOpenOrder {
+	width: 85%;
+	font-size: 1.4em !important;
+	font-weight: bold;
+}
+
+/*.reservationStatusCloseOrder {
+	width: 60% !important;
+	font-size: 1.05em !important;
+	font-weight: normal !important;
+}*/
+
+#buttonOrder {
+	display: inline-block;
+	width: auto;
+	height: 5%;
+	font-size: 0.91em;
+	font-weight: normal;   
+	border-color: black;
+	transform: translateY(-9px);
+}
+
+.buttonOrderOpenOrder {
+	display: none !important;
+}
+
+/*.buttonOrderCloseOrder {
+	display: inline-block !important;
+}*/
+
+#closeOrder {	
+	display: none;
+	color: #aaaaaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+#closeOrder:hover,
+#closeOrder:focus {
+    color: black;
+	text-decoration: none;
+	cursor: default;
+}
+
+.closeOrderOpenOrder {
+	display: inline-block !important;
+}
+
+#buttonCancelOrder {
+	display: none;
+	width: 17%;
+	font-weight: bold;
+	height: 40px;
+	left: 42%;
+	top: 50%;
+	border-color: black;
+}
+
+#buttonCancelOrder:hover {
+	cursor: pointer;
+}
+
+.buttonCancelOrderOpenOrder {
+	display: inline-block !important;
+}
+
+/*.buttonCancelOrderCloseOrder {
+	display: none !important;
+}
+
+
+/* MODALS */
+.modal {
+	display: none;
+	font-weight: bold;
+	position: fixed;
+	z-index: 1;
+	padding-top: 200px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modalcontent {
+	background-color: #dfffee;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid black;
+	width: 40%;
+}
+
+.openModal {
+	display: inline-block;
+}
+
+.modalOpen {
+	display: block;
+}
+
+
+
+/* MEDIA QUERIES */
+
+@media all and (max-device-width: 768px) {
+	#pagetitle {
+		font-size: 60px;
+	}
+
+	#logo_lyon {
+		width: 15%;
+	}
+
+	#section1 {
+		margin-bottom: 25px;
+	}
+
+	.pause {
+		top: 70%;
+	}
+
+	.map {
+		margin-top: 40px;
+		height: 390px;
+		margin-bottom: 0%;
+	}
+
+	.mapForm {
+		width: 80%;
+	}
+
+	.mapValidated {
+		margin-bottom: 10px;
+	}
+
+	.aside {
+		margin-left: 0;
+		margin-top: 14%;
+		margin-bottom: 5%;
+		width: 62%;
+		box-shadow: 0 0 0 0;
+		float: none;
+		padding: 0 0 0 0;
+	}
+
+	.asideValidated {
+		display: none;
+	}
+
+	.infos {
+		height: 390px;
+		margin-bottom: 10%;
+		font-size: 1.7em;
+		padding: 20 20 20 20;
+	}
+
+	#buttonRes {
+		margin-top: 10% !important;
+		width: 50% !important;
+		height: 15% !important;
+		font-size: 0.9em !important;
+	}
+
+	.fields {
+		height: 15% !important;
+		font-size: 1em;
+	}
+
+	#lastName {
+		margin-top: 10%;
+	}
+
+	#choice {
+		margin-top: 5%;
+		font-size: 1em;
+	}
+
+	#numberChoice {
+		font-size: 0.9em;
+	}
+
+	#reservation {
+		margin-top: 20%;
+		margin-bottom: 10%;
+	}
+
+	#signature {
+		font-size: 1.8em;
+	}
+
+	#canvas {
+		height: 20%;
+		width: 85%;
+		margin-bottom: 45px;
+	}
+
+	.button {
+		height: 50px !important;
+		width: 35%;
+		font-size: 1.4em;
+	}
+
+	.reservationStatus {
+		width: 90%;
+		font-size: 1.5em;
+	}
+
+	.reservationStatusOpenOrder {
+		height: 65%;
+		font-size: 2em !important;
+	}
+
+	#buttonOrder {
+		height: 25%;
+		width: 25%;
+		margin-top: 1.75%;
+		font-size: 1.35em;
+	}
+
+	.buttonCancelOrderOpenOrder {
+		width: 50% !important;
+	}
+
+	#buttonCancelAsideWhile {
+		width: 320px;
+	}
+
+	.modal {
+		padding-top: 43%;
+	}
+
+	.modalcontent {
+		width: 70%;
+		height: 5%;
+		font-size: 1.95em;
+		padding-top: 25px;
+		padding-bottom: 15px;
+	}
+
+	#modalStation {
+		height: 8%;
+	}
+
+	#modalVelo {
+		height: 10%;
+	}
+}
+
+
+@media all and (max-device-width: 450px) {
+
+	/* LOGO ET TITRE */
+	header {
+		margin-bottom: 10px;
+	}
+
+	#logo_lyon {
+		width: 15%;
+	}
+
+	#pagetitle {
+		font-size: 32px;
+	}
+
+
+	/* SLIDER */
+	#section1 {
+		margin-bottom: 5%;
+	}
+
+	.btnSlider {
+		width: 0px;
+		font-size: 12px;
+		border: none;
+		color: black;
+		background-color: #11ffee00;
+	}
+
+	/*.prev, .suiv {
+		display: none;
+	}*/
+
+	#pause {
+		width: 20px;
+		bottom: 35px;
+		border: none;
+		color: black;
+		background-color: #11ffee00;
+	}
+
+	#prev:hover, #suiv:hover, #pause:hover {
+		background-color: #11ffee00;
+	}
+
+	.text {
+		font-size: 13px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+
+	/* CARTE */
+	.map {
+		height: 60% !important;
+		width: 90% !important;
+		margin-top: 5%;
+		margin-bottom: 0;
+		margin-right: 0;
+	}
+
+	.gmnoprint {
+		display: none;
+	}
+
+
+	/* RELATIF AU FORMULAIRE ET ZONE DE RÉSA */
+	.aside {
+		margin-top: 16.5%;
+		margin-bottom: 5%;
+		width: 90%;
+		box-shadow: 0 0 0 0;
+		float: none;
+		padding: 0 0 0 0;
+	}
+
+	.asideReservation {
+		margin-top: 18%;
+		margin-bottom: 15%;
+		padding-bottom: 30px;
+	}
+
+	.asideValidated {
+		display: none;
+	}
+
+	.infos {
+		height: auto;
+		font-size: 1.2em;
+		padding: 10 10 10 10;
+		margin-top: 5%;
+		margin-bottom: 0;
+	}
+
+	.fields {
+		height: 5% !important;
+	}
+
+	.reservation {
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+	}
+
+	#signature {
+		font-size: 1.2em;
+	}
+
+	.button {
+		font-size: 1.1em;
+	}
+
+	/* FOOTER */
+	footer {
+		box-shadow: 0 0 0 0;
+		margin-top: 10px;
+	}
+
+	.footerValidated {
+		height: 10%;
+	}
+
+	.reservationStatus {
+		font-size: 1em;
+		padding-top: 4px;
+	}
+
+	.reservationStatusOpenOrder {
+		height: 67%;
+		font-size: 1.3em !important;
+	}
+
+	/*.buttonOrder {
+		width: 40%;
+		margin-top: 2.25%;
+		font-size: 0.99em;
+	}*/
+
+	.buttonCancelOrderOpenOrder {
+		width: 75% !important;
+		height: 35px !important;
+	}
+
+	.modal {
+		padding-top: 80%;
+	}
+
+	.modalcontent {
+		width: 80%;
+		font-size: 1.25em;
+	}
+
+	#modalVelo {
+		height: 12%;
+	}
+}
+
+@media (max-device-width: 375px) {
+	/* CARTE */
+	.map {
+		margin-top: 0;
+		height: 50% !important;
+	}
+
+	/* ASIDE */
+	.aside {
+		height: 250px;
+		margin-top: 5.5%;
+		margin-bottom: 9.5%;
+	}
+
+	.asideReservation {
+		margin-bottom: 3%;
+	}
+
+	.infos {
+		padding-top: 0;
+		margin-top: 2%;
+	}
+
+	#lastName {
+		margin-top: 5%;
+	}
+
+	#signature {
+		margin-top: 0;
+	}
+
+	.button {
+		height: 40px !important;
+		margin-bottom: 0;
+	}
+
+	/* FOOTER */
+	footer {
+		margin-top: 16px;
+	}
+
+	.footerValidated {
+		height: 18%;
+	}
+
+	.footerOpenOrder {
+		height: 28% !important;
+	}
+
+	.reservationStatus {
+		margin-bottom: 4px;
+		font-size: 0.85em;
+	}
+
+	#buttonOrder {
+		width: 50%;
+		height: 30px !important;
+		margin-top: 8px;
+	}
+
+	.reservationStatusOpenOrder {
+		font-size: 1.1em !important;
+		width: 90% !important;
+		height: 63% !important;
+	}
+
+	.buttonCancelOrderOpenOrder {
+		font-size: 1em;
+	}
+
+	.modal {
+		padding-top: 70%;
+	}
+
+	.modalcontent {
+		padding-top: 15px;
+		padding-bottom: 25px;
+	}
+
+	#modalStation {
+		height: 9%;
+	}
+
+	#modalVelo {
+		height: 7%;
+	}
+}
+
+@media (max-device-width: 320px) {
+
+	#buttonOrder {
+		height: 22px !important;
+		font-size: 1em;
+	}
+	#modalVelo  {
+		height: 15%;
+	}
+}
+
+@media (min-device-height: 600px) {
+
+	.reservationStatus {
+		font-size: 1em;
+	}
+}
+
+@media (max-device-height: 520px) {
+	.aside {
+		font-size: 0.75em;
+	}
+
+	.asideReservation {
+		height: 450px !important;
+	}
+
+	#buttonRes {
+		margin-top: 15% !important;
+	}
+
+	.reservationChoice {
+		margin-top: 0;
+	}
+
+	.reservationReservation {
+		height: 135px;
+	}
+
+	#canvas {
+		height: 90%;
+		margin-bottom: 0;
+	}
+
+	#btnValidation, #btnCancellation {
+		margin-top: 10%;
+	}
+
+	.footerValidated {
+		height: 20%;
+	}
+
+	.footerOpenOrder {
+		height: 34% !important;
+	}
+}
