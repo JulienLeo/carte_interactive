@@ -43,7 +43,6 @@ table {
 	border-spacing: 0;
 }
 
-
 /* POLICES UTILISEES POUR PAGE WEB */
 
 @font-face {
@@ -95,7 +94,9 @@ header {
 	font-size: 50px;
 }
 
-
+.sectiontitle {
+	display: none;
+}
 
 /* SLIDER */
 
@@ -443,12 +444,6 @@ footer {
 	font-weight: bold;
 }
 
-/*.reservationStatusCloseOrder {
-	width: 60% !important;
-	font-size: 1.05em !important;
-	font-weight: normal !important;
-}*/
-
 #buttonOrder {
 	display: inline-block;
 	width: auto;
@@ -462,10 +457,6 @@ footer {
 .buttonOrderOpenOrder {
 	display: none !important;
 }
-
-/*.buttonOrderCloseOrder {
-	display: inline-block !important;
-}*/
 
 #closeOrder {	
 	display: none;
@@ -502,10 +493,6 @@ footer {
 
 .buttonCancelOrderOpenOrder {
 	display: inline-block !important;
-}
-
-/*.buttonCancelOrderCloseOrder {
-	display: none !important;
 }
 
 
@@ -594,7 +581,7 @@ footer {
 		height: 390px;
 		margin-bottom: 10%;
 		font-size: 1.7em;
-		padding: 20 20 20 20;
+		padding: 20px 20px 20px 20px;
 	}
 
 	#buttonRes {
@@ -719,10 +706,6 @@ footer {
 		background-color: #11ffee00;
 	}
 
-	/*.prev, .suiv {
-		display: none;
-	}*/
-
 	#pause {
 		width: 20px;
 		bottom: 35px;
@@ -779,7 +762,7 @@ footer {
 	.infos {
 		height: auto;
 		font-size: 1.2em;
-		padding: 10 10 10 10;
+		padding: 10px 10px 10px 10px;
 		margin-top: 5%;
 		margin-bottom: 0;
 	}
@@ -808,7 +791,7 @@ footer {
 	}
 
 	.footerValidated {
-		height: 10%;
+		height: 15%;
 	}
 
 	.reservationStatus {
@@ -820,12 +803,6 @@ footer {
 		height: 67%;
 		font-size: 1.3em !important;
 	}
-
-	/*.buttonOrder {
-		width: 40%;
-		margin-top: 2.25%;
-		font-size: 0.99em;
-	}*/
 
 	.buttonCancelOrderOpenOrder {
 		width: 75% !important;
@@ -888,7 +865,7 @@ footer {
 	}
 
 	.footerValidated {
-		height: 18%;
+		height: 20%;
 	}
 
 	.footerOpenOrder {
