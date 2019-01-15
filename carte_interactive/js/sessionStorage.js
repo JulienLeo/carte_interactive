@@ -14,7 +14,7 @@ if (sessionStorage.getItem("reservationStorage")) { // lancement et récupérati
     let reservationStorage_json = sessionStorage.getItem("reservationStorage")
     reservationStorage = JSON.parse(reservationStorage_json)
 
-    let newForm = new Form(reservationStorage.station) // nouvel affichage dun formulaire
+    let newForm = new Form(reservationStorage.station) // nouvel affichage d'un formulaire
 
     /* reconstruction du footer et événements liés*/
     document.getElementById("map").classList.remove("mapForm")

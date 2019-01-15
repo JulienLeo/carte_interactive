@@ -90,7 +90,7 @@ let Form = function(station) {
       buttonCancelAsideWhile.classList.add("buttonCancelAsideWhileValidated")
 
       /* footer */
-      footer.classList.add("footerValidated")
+      footer.classList.add("footerValidated")      
 
       /* media queries */
       aside.classList.add("asideValidated")
@@ -137,21 +137,19 @@ let Form = function(station) {
   }
 
   that.cancelOrder = function () { // annulation de la commande
-    availableBikes.textContent = "Vélos disponibles : " + (station.available_bikes)
-    availableStands.textContent = "Places disponibles : " + (station.available_bike_stands)
-    if (station.available_bikes < 2) {
-      availableBikes.textContent = "Vélo disponible : " + (station.available_bikes)
-    }
-    if (station.available_bike_stands < 2) {
-      availableStands.textContent = "Place disponible : " + (station.available_bike_stands)
+    if (availableBikes.textContent != "Vélo disponible : 0") {
+      buttonRes.classList.add("buttonResForm")
+      buttonRes.classList.remove("buttonResReservation")
     }
     chrono1.stop()
     aside.classList.remove("asideValidated")
     footer.classList.remove("footerValidated")
     footer.classList.remove("footerOpenOrder")
-    buttonRes.classList.add("buttonResForm")
-    buttonRes.classList.remove("buttonResReservation")
+    reservationStatus.classList.remove("reservationStatusOpenOrder")
     buttonCancelAsideWhile.classList.remove("buttonCancelAsideWhileValidated")
+    buttonCancelOrder.classList.remove("buttonCancelOrderOpenOrder")
+    buttonOrder.classList.remove("buttonOrderOpenOrder")
+    closeOrder.classList.remove("closeOrderOpenOrder")
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     document.getElementById("cancelModal").classList.add("openModal")
     document.getElementById("modalCancel").classList.add("modalOpen")
@@ -173,23 +171,6 @@ let Form = function(station) {
     /* NOM PRENOM ET NOMBRE DE VÉLOS */
     fields.classList.add("fieldsReservation")
     choice.classList.add("reservationChoice")
-
-    if (that.station.available_bikes < 2) {
-      option2.classList.add("optionImpossible")
-      option3.classList.add("optionImpossible")
-    }
-
-    if (that.station.available_bikes < 3) {
-      option3.classList.add("optionImpossible")
-    }
-
-    if (that.station.available_bikes > 1) {
-      option2.classList.remove("optionImpossible")
-    }
-
-    if (that.station.available_bikes > 2) {
-      option3.classList.remove("optionImpossible")
-    }
 
     btnValidation.addEventListener("click", function clicValid() {
       that.validation()
@@ -225,10 +206,14 @@ let Form = function(station) {
     if (that.station.status == "OPEN") {
       statusElt.textContent = "OUVERTE"
       statusElt.classList.add("statusEltGreen")
+      statusElt.classList.remove("statusEltRed")
       buttonRes.classList.remove("buttonResReservation")
+      if (footer.classList.contains("footerValidated")) {
+        buttonRes.classList.add("buttonResReservation")
+      }
     }
 
-    if (that.station.available_bikes == 0 && that.station.status == "OPEN" || that.station.available_bikes == 0) {
+    if (that.station.available_bikes == 0 && that.station.status == "OPEN" || that.station.available_bikes == 0 && that.station.status != "CLOSED") {
       aside.classList.remove("asideReservation")
       reservation.classList.remove("reservationReservation")
       fields.classList.remove("fieldsReservation")
@@ -245,9 +230,26 @@ let Form = function(station) {
       choice.classList.remove("reservationChoice")
       statusElt.textContent = "FERMÉE"
       statusElt.classList.add("statusEltRed")
+      statusElt.classList.remove("statusEltGreen")
       buttonRes.classList.add("buttonResReservation")
       document.getElementById("stationModal").classList.add("openModal")
       document.getElementById("modalStation").classList.add("modalOpen")
+    }
+
+    if (that.station.available_bikes < 2) {
+      option2.classList.add("optionImpossible")
+    }
+
+    if (that.station.available_bikes < 3) {
+      option3.classList.add("optionImpossible")
+    }
+
+    if (that.station.available_bikes > 1) {
+      option2.classList.remove("optionImpossible")
+    }
+
+    if (that.station.available_bikes > 2) {
+      option3.classList.remove("optionImpossible")
     }
 
     buttonRes.addEventListener("click", function () { // déclenchement de l'ouverture de la réservation

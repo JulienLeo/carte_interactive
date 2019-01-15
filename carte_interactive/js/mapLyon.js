@@ -56,7 +56,6 @@ let Map = function () {
   ajaxGet("https://api.jcdecaux.com/vls/v1/stations?contract=lyon&apiKey=6a409fbf20a07d1574bf8eeecdb0c3b5826a4fb7", function (reponse) {
     let stations = JSON.parse(reponse)
 
-
     stations.forEach(function (station) {
       addMarker(station)
     })

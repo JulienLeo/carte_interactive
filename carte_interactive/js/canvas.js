@@ -14,7 +14,7 @@ let Canvas = function(element) {
     that.ctx.beginPath() // initialisation dessin
     that.ctx.moveTo(evt.offsetX, evt.offsetY) // définition de la zone sur un axe XY 
     canvas.addEventListener("mousemove", paint, false) // application du tracé 
-    //canvas.addEventListener("touchmove", paint, false)
+    canvas.addEventListener("touchmove", paint, false)
   }
 
   function pointerUp(evt) {

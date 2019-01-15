@@ -23,7 +23,7 @@ let Slider = function() {
         slider.play(slideIndex += n-1)
     }
 
-    /* iamge en cours */
+    /* image en cours */
     function currentSlide(n) { // définition de l'image en cours pour le clic sur les points
 	    slider.play(slideIndex = n)
     }
