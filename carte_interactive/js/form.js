@@ -90,7 +90,10 @@ let Form = function(station) {
       buttonCancelAsideWhile.classList.add("buttonCancelAsideWhileValidated")
 
       /* footer */
-      footer.classList.add("footerValidated")      
+      footer.classList.add("footerValidated")
+      if (footer.classList.contains("footerValidated")) {
+        buttonRes.classList.add("buttonResReservation")
+      }   
 
       /* media queries */
       aside.classList.add("asideValidated")
@@ -164,13 +167,13 @@ let Form = function(station) {
     buttonRes.classList.add("buttonResReservation")
     infos.classList.add("infosReservation")
     reservation.classList.add("reservationReservation")
-    option1.value = 1
-    option2.value = 2
-    option3.value = 3
 
     /* NOM PRENOM ET NOMBRE DE VÉLOS */
     fields.classList.add("fieldsReservation")
     choice.classList.add("reservationChoice")
+    option1.value = 1
+    option2.value = 2
+    option3.value = 3
 
     btnValidation.addEventListener("click", function clicValid() {
       that.validation()
