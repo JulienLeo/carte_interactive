@@ -25,6 +25,10 @@ let Map = function () { // création de l'objet
     iconUrl: "../img/logos/velovrouge.png"
   })
 
+  let greenIconZero = L.icon({
+    iconUrl: "../img/logos/velovertzero.png"
+  })
+
   /* ajout marker */
   let marker
   addMarker = function (station) {
@@ -37,6 +41,13 @@ let Map = function () { // création de l'objet
       marker = new L.marker([station.position.lat, station.position.lng], { // récupération des coordonnées de chaque marker
         icon: redIcon, // icône rouge lorsque la station est fermée
         title: station.name
+      })
+    }
+
+    if (station.available_bikes == 0) {
+      marker = new L.marker([station.position.lat, station.position.lng], { // récupération des coordonnées de chaque marker
+      icon: greenIconZero, // icône verte avec un point rouge lorsque la station est ouverte mais qu'aucun vélo n'est disponible
+      title: station.name
       })
     }
 
